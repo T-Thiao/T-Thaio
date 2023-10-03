@@ -1,0 +1,382 @@
+body.PAGE {
+    height: 100vh;
+    background: #e791d9;
+    font-family: "Mitr", sans-serif;
+  }
+  
+  .menu_item {
+      padding: 0;
+  }
+  
+  /* Pre css */
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  .nav_image {
+    display: flex;
+    min-width: 55px;
+    justify-content: center;
+    
+  }
+  .nav_image img {
+    height: 160px;
+    width: 220px;
+    object-fit: cover;
+  }
+  
+  .linkTo {
+      text-decoration: none; /* เอาเส้นใต้ออก */
+      color: black;
+  } 
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 220px;
+    background: #fff;
+    z-index: 3 ;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+  }
+  
+  .logo_items {
+    gap: 8px;
+  }
+  .logo_name {
+    font-size: 22px;
+    color: #333;
+    font-weight: 500px;
+    transition: all 0.3s ease;
+  }
+  .sidebar.close .logo_name,
+  .sidebar.close #lock-icon,
+  .sidebar.close #sidebar-close {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #lock-icon,
+  #sidebar-close {
+    padding: 10px;
+    color: #4070f4;
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: -4px;
+    transition: all 0.3s ease;
+  }
+  .menu_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    height: calc(100% - 82px);
+  }
+  .item {
+    list-style: none;
+  }
+  .link {
+    text-decoration: none;
+    margin-bottom: 8px;
+    color: #0a0a0a;
+  }
+  .link:hover {
+    color: #fff;
+    background-color: #00C2C1;
+  }
+  ul {
+      padding-left: 0rem;
+  }
+  .link span {
+    white-space: nowrap;
+    
+  }
+  .link i {
+    height: 50px;
+    min-width: 55px;
+    display: flex;
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .sidebar-name {
+    font-size: 16px;
+    color: #0f0202;
+    font-weight: bold;
+    position: absolute;
+    bottom: 35px; /* ใช้ค่า bottom: 0 เพื่อฟิกตำแหน่งด้านล่าง */
+    left: 75px; /* ห่างจากด้านซ้าย 100px */
+  }
+  .sidebar-username {
+    font-size: 14px;
+    color: #0f0202;
+    font-weight: bold;
+    position: absolute;
+    bottom: 14px;
+    right: 70px;
+  }
+  .data_text i {
+    position: absolute;
+    bottom: 43px;
+    right: 25px;
+  }
+  
+  .profile_image {
+      display: flex;
+      min-width: 55px;
+      justify-content: center;
+  }
+  .profile_image img {
+      height: 50px;
+      width: 50px;
+      object-fit: cover;
+      margin-right: 10px;
+      transform: translateY(-85px); 
+  }
+    
+  /* Navbar */
+  .navbarBoard
+  .navbar-second {
+    width: 100%;
+    position: fixed;
+    display: flex;
+  }
+  
+  .navbarBoard {
+    top: 0;
+    height: 160px;
+    background: #FE547B;
+    z-index: 2;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Navbar Second */
+  .navbar-second {
+    height: 60px; /* Change the height to a pixel value, e.g., 35px */
+    top: 100px; /* Change the top value to match the height of the navbar */
+    background: #F1E189;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .my-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 45px;
+    background-color: #FFF9E1;
+    color: #333;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .my-button:first-child {
+    margin-left: 250px; /* ปุ่มแรกมีระยะห่างด้านซ้าย 250px */
+  }
+  
+  .my-button:not(:first-child) {
+    margin-left: 0; /* ปุ่มอื่น ๆ ไม่มีระยะห่างด้านซ้าย (เหมือนเดิม) */
+  }
+  .my-button:hover {
+    background-color: #F39032;
+    color: #333;
+  }
+  
+  .search_box {
+    height: 40px;
+    max-width: 500px;
+    width: 400px;
+    position: absolute;
+  
+    top: 30px; 
+    left: 300px; 
+    border: 1px solid #FE547B;
+    outline: none;
+    border-radius: 50px;
+    padding: 0 55px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    transform: none;
+  }
+  .rectangle {
+    position: absolute;
+    width: 55px;
+    height: 40px;
+    left: 290px;
+    top: 30px;
+    background: #00C2C1;
+    border-radius: 20px;
+    z-index: 2;
+  }
+  
+  .rectangle-two {
+    position: absolute; 
+    width: 55px;
+    height: 40px;
+    left: 645px; 
+    top: 30px;
+    background: #00C2C1;
+    border-radius: 20px;
+    z-index: 2; /* เพิ่ม z-index เป็น 2 */
+  }
+  .rectangle i {
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    top: 13px;
+    align-items: center;
+    left: 5px;
+  }
+  .rectangle-two i {
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    top: 13px;
+    align-items: center;
+    left: 5px; 
+  }
+  .navbar-image {
+    height: auto; /* ทำให้ความสูงปรับตามอัตราส่วน */
+    max-width: 40px; /* กำหนดความกว้างสูงสุดของภาพ */
+    position: absolute; /* ตั้งให้ภาพอยู่ในโหมด absolute */
+    right: 100px; /* ระยะห่างจากขอบขวา 100px */
+    top: 20px; /* ยืนยันตำแหน่งด้านบน */
+    width: 100%; /* ขยายภาพให้เต็มความกว้างของ .navbar-image */
+  }
+  
+  .custom-checkbox {
+    width: 340px;
+    height: 80px;
+    position: absolute;
+    top: 30px; /* ระยะห่างด้านบน */
+    right: 350px; /* ระยะห่างด้านขวา */
+    transform: none; /* เราไม่จำเป็นต้องใช้ transform: translateX(50%) อีก */
+  }
+  .custom-checkbox input#status {
+    display: none;
+  }
+  .custom-checkbox input#status + label {
+    height: 100%;
+    width: 100%;
+  }
+  .custom-checkbox input#status + label > .status-switch {
+    cursor: pointer;
+    width: 300px;
+    height: 40px;
+    position: relative;
+    background-color: #FFB8C8;
+    color: white;
+    transition: all 0.5s ease;
+    padding: 3px;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+  .custom-checkbox input#status + label > .status-switch:before, .custom-checkbox input#status + label > .status-switch:after {
+    border-radius: 2px;
+    height: calc(100% - 6px);
+    width: calc(50% - 3px);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+  
+  }
+  .custom-checkbox input#status + label > .status-switch:before {
+    background-color: white;
+    color: #FE547B;
+    left: 3px;
+    z-index: 10;
+    content: attr(data-unchecked);
+  }
+  .custom-checkbox input#status + label > .status-switch:after {
+    right: 0;
+    content: attr(data-checked);
+  }
+  .custom-checkbox input#status:checked + label > .status-switch {
+    background-color: #FFB8C8;
+  }
+  .custom-checkbox input#status:checked + label > .status-switch:after {
+    left: 0;
+    content: attr(data-unchecked);
+  }
+  .custom-checkbox input#status:checked + label > .status-switch:before {
+    color: #FE547B;
+    left: 50%;
+    content: attr(data-checked);
+  }
+  .nav_usernamebord {
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    top: 60px;
+    left: 300px;
+}
+  .navbarBoard i {
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  top: 13px;
+  align-items: center;
+  left: 5px;
+  }
+  .rectangle-icon {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    left: 250px;
+    top: 63px;
+    background: #FE547B;
+    border-radius: 20px;
+    z-index: 2;
+  }
+  .rectangle-icon i {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    color: #ffffff;
+    top: 13px;
+    align-items: center;
+    left: 1px;
+  }
+ 
+  /* Responsive */
+  
+  @media screen and (max-width: 1100px) {
+    .navbarBoard {
+      left: 65%;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .sidebar {
+      left: 0;
+      z-index: 1000;
+    }
+    .sidebar.close {
+      left: -100%;
+    }
+    #sidebar-close {
+      display: block;
+    }
+    #lock-icon {
+      display: none;
+    }
+    .navbarBoard {
+      left: 0;
+      max-width: 100%;
+      transform: translateX(0%);
+    }
+    #sidebar-open {
+      display: block;
+    }
+  }

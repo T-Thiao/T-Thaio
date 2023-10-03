@@ -1,0 +1,75 @@
+.container {
+  width: 100%;
+  color: white;
+  font-family: "Mitr", sans-serif;
+  
+}
+
+.createHome {
+  font-family: "Mitr", sans-serif;
+  display: block;
+  width: 60%;
+  padding: 10px;
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transform: translateY(50px);
+  background-color: #02c4c3;
+}
+
+#sky {
+  background-color: red;
+  height: 70vh;
+  background-image: url("/assets/pics/home.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 15% 45%;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#sky .overlayerr {
+  text-transform: uppercase;
+  color: white;
+}
+
+#sky .mountain_btm_right {
+  position: absolute;
+  width: 50%;
+  right: 0;
+  bottom: 0;
+  height: 400px;
+  background-image: url("/assets/pics/bg_home.png");
+}
+#sky .mountain_btm_left {
+  position: absolute;
+  width: 50%;
+  left: 0;
+  bottom: 0;
+  height: 400px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  background-image: url("/assets/pics/bg_home.png");
+}
+#sky .mountain_btm_mid {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 80px;
+  margin: 0 auto;
+  bottom: -80px;
+  height: 400px;
+  background-image: url("/assets/pics/bg_home.png");
+}
+
+section {
+  position: relative;
+  z-index: 5;
+  background-color: #28132a;
+  height: 30vh;
+}
