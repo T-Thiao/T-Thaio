@@ -20,47 +20,47 @@ function Mainbord() {
       </div>
       <div class="menu_container">
   <div class="menu_items">
-    <ul class="menu_item">
-      <li class="item">
-        <a class="link flex">
-          <i class='bx bx-map'></i>
-          <Link to="/Page"><span class='linkTo'>เเมตช์ที่ที่ใช่</span></Link>
-        </a>
-      </li>
-      <li class="item">
-        <a href="#" class="link flex">
-          <i class='bx bx-credit-card-front'></i>
-          <Link to="/Mainbord"><span class='linkTo'>เว็บบอร์ด</span></Link>
-        </a>
-      </li>
-    </ul>
+  <ul class="menu_item">
+  <li class="item">
+    <a href="/Page" class="link flex">
+      <i class='bx bx-map'></i>
+      <span class='linkTo'>เเมตช์ที่ที่ใช่</span>
+    </a>
+  </li>
+  <li class="item">
+    <a href="/Mainbord" class="link flex">
+      <i class='bx bx-credit-card-front'></i>
+      <span class='linkTo'>เว็บบอร์ด</span>
+    </a>
+  </li>
+</ul>
 
-    <ul class="menu_item">
-      <li class="item">
-        <a href="#" class="link flex">
-          <i class='bx bx-check-circle'></i>
-          <Link to="/recommended_Main"><span class='linkTo'>สถานที่เเนะนำ</span></Link>
-        </a>
-      </li>
-      <li class="item">
-        <a href="#" class="link flex">
-          <i class='bx bx-bell'></i>
-          <Link to="/Notif_empty_Main"><span class='linkTo'>การเเจ้งเตือน</span></Link>
-        </a>
-      </li>
-      <li class="item">
-        <a href="#" class="link flex">
-          <i class='bx bx-user'></i>
-          <Link to="/Profile"><span class='linkTo'>โปรไฟล์</span></Link>
-        </a>
-      </li>
-      <li class="item">
-        <a href="#" class="link flex">
-          <i class='bx bx-heart'></i>
-          <Link to="/Like"><span class='linkTo'>ที่เที่ยวที่ถูกใจ</span></Link>
-        </a>
-      </li>
-    </ul>
+<ul class="menu_item">
+  <li class="item">
+    <a href="/Recommended_Main" class="link flex">
+      <i class='bx bx-check-circle'></i>
+      <span class='linkTo'>สถานที่เเนะนำ</span>
+    </a>
+  </li>
+  <li class="item">
+    <a href="/Notif_empty_Main" class="link flex">
+      <i class='bx bx-bell'></i>
+      <span class='linkTo'>การเเจ้งเตือน</span>
+    </a>
+  </li>
+  <li class="item">
+    <a href="/Profile" class="link flex">
+      <i class='bx bx-user'></i>
+      <span class='linkTo'>โปรไฟล์</span>
+    </a>
+  </li>
+  <li class="item">
+    <a href="/Like" class="link flex">
+      <i class='bx bx-heart'></i>
+      <span class='linkTo'>ที่เที่ยวที่ถูกใจ</span>
+    </a>
+  </li>
+</ul>
   </div>
 
   <div class="sidebar_profile flex">

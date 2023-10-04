@@ -13,6 +13,7 @@ body.PAGE {
   display: flex;
   align-items: center;
 }
+
 .nav_image {
   display: flex;
   min-width: 55px;
@@ -26,7 +27,7 @@ body.PAGE {
 }
 
 .linkTo {
-  text-decoration: none !important; /* ใช้ !important เพื่อบังคับให้เส้นใต้ถูกลบออก */
+  text-decoration: none;
 }
 
 
@@ -52,21 +53,8 @@ body.PAGE {
   font-weight: 500px;
   transition: all 0.3s ease;
 }
-.sidebar.close .logo_name,
-.sidebar.close #lock-icon,
-.sidebar.close #sidebar-close {
-  opacity: 0;
-  pointer-events: none;
-}
-#lock-icon,
-#sidebar-close {
-  padding: 10px;
-  color: #4070f4;
-  font-size: 25px;
-  cursor: pointer;
-  margin-left: -4px;
-  transition: all 0.3s ease;
-}
+
+
 .menu_container {
   display: flex;
   flex-direction: column;
@@ -81,13 +69,17 @@ body.PAGE {
   text-decoration: none;
   margin-bottom: 8px;
   color: #0a0a0a;
+  
 }
+
 .link:hover {
   color: #fff;
   background-color: #00C2C1;
-  
+  transition: background-color 0.3s;
 }
-.link :active {
+
+
+.link:active {
   background-color: #00C2C1;
 }
 
