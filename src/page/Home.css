@@ -2,13 +2,14 @@
   width: 100%;
   color: white;
   font-family: "Mitr", sans-serif;
+
   
 }
 
 .createHome {
   font-family: "Mitr", sans-serif;
   display: block;
-  width: 60%;
+  width: 30%;
   padding: 10px;
   border: none;
   color: #fff;
@@ -16,6 +17,9 @@
   cursor: pointer;
   transform: translateY(50px);
   background-color: #02c4c3;
+}
+.createHome:hover{
+  background-color: #047c7c;
 }
 
 #sky {
@@ -40,7 +44,7 @@
 
 #sky .mountain_btm_right {
   position: absolute;
-  width: 50%;
+  width: 80%;
   right: 0;
   bottom: 0;
   height: 400px;

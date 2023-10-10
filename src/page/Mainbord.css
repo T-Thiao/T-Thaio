@@ -1,6 +1,6 @@
 body.PAGE {
     height: 100vh;
-    background: #e791d9;
+    
     font-family: "Mitr", sans-serif;
   }
   
@@ -321,6 +321,7 @@ body.PAGE {
     position: absolute;
     top: 60px;
     left: 300px;
+    font-family: "Mitr", sans-serif;
 }
   .navbarBoard i {
   position: absolute;

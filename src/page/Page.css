@@ -1,9 +1,10 @@
-body.PAGE {
+.body {
   height: 100vh;
-  background: #e791d9;
   font-family: "Mitr", sans-serif;
 }
-
+body.PAGE{
+  background-color:#FFB8C8 ;
+}
 .menu_item {
     padding: 0;
 }
@@ -18,7 +19,7 @@ body.PAGE {
   display: flex;
   min-width: 55px;
   justify-content: center;
-  
+
 }
 .nav_image img {
   height: 160px;
@@ -164,17 +165,11 @@ ul {
 }
 
 .my-button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-right: 45px;
-  background-color: #FFF9E1;
+  background-color:rgb(44, 160, 69);
   color: #333;
   padding: 10px 30px;
-  border: none;
-  border-radius: 50px;
   cursor: pointer;
-  font-weight: bold;
 }
 
 .my-button:first-child {
@@ -216,6 +211,9 @@ ul {
   border-radius: 20px;
   z-index: 2;
 }
+.rectangle:hover{
+  background: #007272;
+}
 
 .rectangle-two {
   position: absolute; 
@@ -226,6 +224,9 @@ ul {
   background: #00C2C1;
   border-radius: 20px;
   z-index: 2; /* เพิ่ม z-index เป็น 2 */
+}
+.rectangle-two:hover{
+  background:#007272;
 }
 .rectangle i {
   position: absolute;
