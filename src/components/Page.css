@@ -5,8 +5,54 @@ body.PAGE {
 }
 
 .menu_item {
-    padding: 0;
+  padding: 0;
 }
+
+#popupFilter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.popup-inner {
+  background: white;
+  border-radius: 20px;
+  border: #0a0a0a solid;
+}
+
+.filterButton {
+  border: transparent;
+  background-color: transparent;
+}
+
+.ButtonRow {
+  background-color: #fff0b5;
+  border-radius: 20px;
+}
+
+.filterButton.h4 {
+  color: black;
+}
+
+.ButtonRow:hover .filterButton,
+.ButtonRow:active .filterButton {
+  color: rgb(255, 255, 255);
+}
+
+.ButtonRow:hover,
+.ButtonRow.selected {
+  background-color: #f39032;
+  cursor: pointer;
+}
+
+
 
 /* Pre css */
 .flex {
@@ -18,7 +64,6 @@ body.PAGE {
   display: flex;
   min-width: 55px;
   justify-content: center;
-  
 }
 .nav_image img {
   height: 160px;
@@ -30,7 +75,6 @@ body.PAGE {
   text-decoration: none;
 }
 
-
 /* Sidebar */
 .sidebar {
   position: fixed;
@@ -39,7 +83,7 @@ body.PAGE {
   height: 100%;
   width: 220px;
   background: #fff;
-  z-index: 3 ;
+  z-index: 3;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
 }
@@ -53,7 +97,6 @@ body.PAGE {
   font-weight: 500px;
   transition: all 0.3s ease;
 }
-
 
 .menu_container {
   display: flex;
@@ -69,27 +112,23 @@ body.PAGE {
   text-decoration: none;
   margin-bottom: 8px;
   color: #0a0a0a;
-  
 }
 
 .link:hover {
   color: #fff;
-  background-color: #00C2C1;
+  background-color: #00c2c1;
   transition: background-color 0.3s;
 }
 
-
 .link:active {
-  background-color: #00C2C1;
+  background-color: #00c2c1;
 }
 
 ul {
-    padding-left: 0rem;
+  padding-left: 0rem;
 }
 .link span {
   white-space: nowrap;
-  
-  
 }
 .link i {
   height: 50px;
@@ -124,18 +163,18 @@ ul {
 }
 
 .profile_image {
-    display: flex;
-    min-width: 55px;
-    justify-content: center;
+  display: flex;
+  min-width: 55px;
+  justify-content: center;
 }
 .profile_image img {
-    height: 50px;
-    width: 50px;
-    object-fit: cover;
-    margin-right: 10px;
-    transform: translateY(-85px); 
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  transform: translateY(-85px);
 }
-  
+
 /* Navbar */
 .navbar,
 .navbar-second {
@@ -148,7 +187,7 @@ ul {
   top: 0;
   left: 0;
   height: 100px; /* Change the height to a pixel value, e.g., 50px */
-  background: #FE547B;
+  background: #fe547b;
   z-index: 2;
   justify-content: space-between;
   align-items: center;
@@ -158,7 +197,7 @@ ul {
 .navbar-second {
   height: 60px; /* Change the height to a pixel value, e.g., 35px */
   top: 100px; /* Change the top value to match the height of the navbar */
-  background: #F1E189;
+  background: #f1e189;
   align-items: center;
   z-index: 1;
 }
@@ -168,7 +207,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   margin-right: 45px;
-  background-color: #FFF9E1;
+  background-color: #fff9e1;
   color: #333;
   padding: 10px 30px;
   border: none;
@@ -185,7 +224,7 @@ ul {
   margin-left: 0; /* ปุ่มอื่น ๆ ไม่มีระยะห่างด้านซ้าย (เหมือนเดิม) */
 }
 .my-button:hover {
-  background-color: #F39032;
+  background-color: #f39032;
   color: #333;
 }
 
@@ -195,9 +234,9 @@ ul {
   width: 400px;
   position: absolute;
 
-  top: 30px; 
-  left: 300px; 
-  border: 1px solid #FE547B;
+  top: 30px;
+  left: 300px;
+  border: 1px solid #fe547b;
   outline: none;
   border-radius: 50px;
   padding: 0 55px;
@@ -212,18 +251,18 @@ ul {
   height: 40px;
   left: 290px;
   top: 30px;
-  background: #00C2C1;
+  background: #00c2c1;
   border-radius: 20px;
   z-index: 2;
 }
 
 .rectangle-two {
-  position: absolute; 
+  position: absolute;
   width: 55px;
   height: 40px;
-  left: 645px; 
+  left: 645px;
   top: 30px;
-  background: #00C2C1;
+  background: #00c2c1;
   border-radius: 20px;
   z-index: 2; /* เพิ่ม z-index เป็น 2 */
 }
@@ -241,7 +280,7 @@ ul {
   height: 60px;
   top: 13px;
   align-items: center;
-  left: 5px; 
+  left: 5px;
 }
 .navbar-image {
   height: auto; /* ทำให้ความสูงปรับตามอัตราส่วน */
@@ -272,14 +311,15 @@ ul {
   width: 300px;
   height: 40px;
   position: relative;
-  background-color: #FFB8C8;
+  background-color: #ffb8c8;
   color: white;
   transition: all 0.5s ease;
   padding: 3px;
   border-radius: 50px;
   font-weight: bold;
 }
-.custom-checkbox input#status + label > .status-switch:before, .custom-checkbox input#status + label > .status-switch:after {
+.custom-checkbox input#status + label > .status-switch:before,
+.custom-checkbox input#status + label > .status-switch:after {
   border-radius: 2px;
   height: calc(100% - 6px);
   width: calc(50% - 3px);
@@ -289,11 +329,10 @@ ul {
   justify-content: center;
   transition: all 0.3s ease;
   border-radius: 50px;
-
 }
 .custom-checkbox input#status + label > .status-switch:before {
   background-color: white;
-  color: #FE547B;
+  color: #fe547b;
   left: 3px;
   z-index: 10;
   content: attr(data-unchecked);
@@ -303,14 +342,14 @@ ul {
   content: attr(data-checked);
 }
 .custom-checkbox input#status:checked + label > .status-switch {
-  background-color: #FFB8C8;
+  background-color: #ffb8c8;
 }
 .custom-checkbox input#status:checked + label > .status-switch:after {
   left: 0;
   content: attr(data-unchecked);
 }
 .custom-checkbox input#status:checked + label > .status-switch:before {
-  color: #FE547B;
+  color: #fe547b;
   left: 50%;
   content: attr(data-checked);
 }
@@ -322,7 +361,6 @@ ul {
   top: 40px;
   right: 200px; /* ห่างจากขอบขวา 150px */
 }
-
 
 /* Responsive */
 
