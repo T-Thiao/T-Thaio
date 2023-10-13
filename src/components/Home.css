@@ -1,26 +1,74 @@
+body.Home {
+  font-family: "Mitr", sans-serif;
+  overflow-y: hidden;
+}
+
 .container {
   width: 100%;
   color: white;
-  font-family: "Mitr", sans-serif;
-  
 }
 
 .createHome {
-  font-family: "Mitr", sans-serif;
   display: block;
-  width: 60%;
+  width: 50%;
   padding: 10px;
   border: none;
-  color: #fff;
+  color: rgb(255, 255, 255);
   border-radius: 20px;
   cursor: pointer;
   transform: translateY(50px);
   background-color: #02c4c3;
+  text-align: none;
+}
+
+.loginNav {
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  position: absolute;
+  top: 30px;
+  right: 200px;
+  background-color: #f1e189;
+  border: none;
+  border-radius: 20px;
+}
+
+.loginNav:hover {
+  background-color: rgb(255, 225, 55);
+  color: rgb(0, 0, 0);
+}
+
+.createHome:hover {
+  background-color: #008181;
+  color: rgb(255, 255, 255);
+}
+
+.linking {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.navbar-logo {
+  height: auto; /* ทำให้ความสูงปรับตามอัตราส่วน */
+  max-width: 40px; /* กำหนดความกว้างสูงสุดของภาพ */
+  position: absolute; /* ตั้งให้ภาพอยู่ในโหมด absolute */
+  left: 100px; /* ระยะห่างจากขอบขวา 100px */
+  top: 0; /* ยืนยันตำแหน่งด้านบน */
+  width: 100%; /* ขยายภาพให้เต็มความกว้างของ .navbar-image */
+}
+
+.navbar-profile {
+  height: auto; /* ทำให้ความสูงปรับตามอัตราส่วน */
+  max-width: 40px; /* กำหนดความกว้างสูงสุดของภาพ */
+  position: absolute; /* ตั้งให้ภาพอยู่ในโหมด absolute */
+  right: 100px; /* ระยะห่างจากขอบขวา 100px */
+  top: 20px; /* ยืนยันตำแหน่งด้านบน */
+  width: 100%; /* ขยายภาพให้เต็มความกว้างของ .navbar-image */
 }
 
 #sky {
   background-color: red;
-  height: 70vh;
+  height: 60vh;
   background-image: url("/assets/pics/home.jpg");
   background-repeat: no-repeat;
   background-size: cover;

@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/page" element={<Page />} />
+          <Route path="/" element={<Home />} />
           <Route path="/page" element={<Page />} />
           <Route path="/webbord" element={<Webbord />} />
           <Route path="/mainbord" element={<Mainbord />} />
@@ -33,8 +33,6 @@ function App() {
           <Route path="/profile_edit" element={<Profile_edit />} />
           <Route path="/Like" element={<Like />} />
 
-
-        
         </Routes>
       </Router>
     </div>

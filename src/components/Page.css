@@ -363,7 +363,7 @@ ul {
   font-weight: bold;
   position: absolute;
   top: 40px;
-  right: 200px; /* ห่างจากขอบขวา 150px */
+  right: 200px;
 }
 
 /* Responsive */
