@@ -1,6 +1,6 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+// import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import './Login.css';
 import axios from "axios";
 
@@ -15,16 +15,25 @@ function Signup() {
     }
   }, []);
 
+  const [text, setText] = useState(" ");
+  const [showIcon, setShowIcon] = useState(false);
 
-  const [showPopupAlready, setShowPopupAlready] = useState(false);
-  const [showPopupReqiured, setShowPopupReqiured] = useState(false);
-  const [showPopupSuccessfully, setShowPopupSuccessfully] = useState(false);
+  const AlreadyUse = () => {
+    setShowIcon(true);
+    setText("This username is already in use");
+  };
+
+  const Reqiured = () => {
+    setShowIcon(true);
+    setText("Please enter required info");
+  };
 
   const navigate = useNavigate()
   const [signupUser, setSignupUser] = useState({
     username: "",
     password: "",
-    phone: "",
+    email: "",
+    name: ""
   })
 
   async function SingUpHandler() {
@@ -32,10 +41,7 @@ function Signup() {
       signupUser.password == "" ||
       signupUser.phone == "") {
       console.log("Please enter reqiured info")
-      setShowPopupReqiured(true);
-      setTimeout(() => {
-        setShowPopupReqiured(false);
-      }, 1500);
+      Reqiured();
     }
     else {
       try {
@@ -43,7 +49,7 @@ function Signup() {
           url: 'https://localhost:7161' + '/api/User/Register',
           method: 'POST',
           data: {
-            Username: signupUser.username,
+            email: signupUser.email,
             Password: signupUser.password,
             Phone: signupUser.phone
           },
@@ -52,19 +58,15 @@ function Signup() {
           }
         })
         console.log("Sign Up Successfully")
-        setShowPopupSuccessfully(true);
         setTimeout(() => {
-          setShowPopupSuccessfully(false);
           return navigate('/login');
         }, 2500);
 
       }
       catch (err) {
         console.log("This username is already in use")
-        setShowPopupAlready(true);
-        setTimeout(() => {
-          setShowPopupAlready(false);
-        }, 1500);
+        AlreadyUse();
+
       }
     }
   }
@@ -87,15 +89,12 @@ function Signup() {
   return (
     <div>
 
-
-
-
       <div className="wrapper">
         <div class='container'>
           <div class="row">
             <div class="col-12 col-xl-6 px-5">
-              <div class="h2 pt-5  text-start">
-                Create new account.
+              <div class="h2 pt-5  text-start" style={{ color: 'black' }}>
+                Create new account
               </div>
               <form class='formTextSignup'>
                 <label>Name</label>
@@ -134,6 +133,11 @@ function Signup() {
                   })
                 }} type={inputType} onKeyDown={handleKeyDown} placeholder="" /><span style={{ cursor: 'pointer' }} onClick={handlePasswordClick} className={inputClassName}></span>
               </form>
+              <div class="p text-start pt-4" style={{ color: 'red' }} >
+                <span class="me-2">{showIcon && <i class="fa-solid fa-circle-info"></i>}</span>
+                <span>{text}</span>
+
+              </div>
               <div class='pb-5'>
                 <button onClick={SingUpHandler}
                   className="CREATE">Create Account</button></div>
@@ -146,38 +150,6 @@ function Signup() {
           </div>
         </div>
       </div>
-
-
-      {showPopupAlready && (
-
-        <div id="popup4" className="overlay">
-          <div className="popup4 h1 text-center">
-            <i class="fa-solid fa-circle-exclamation"></i>
-            <div className="h4 py-4"><b>Account already in use</b></div>
-          </div>
-        </div>
-      )}
-
-      {showPopupReqiured && (
-
-        <div id="popup4" className="overlay">
-          <div className="popup4 h1 text-center">
-            <i class="fa-solid fa-question"></i>
-            <div className="h4 py-4"><b>Please enter reqiured info</b></div>
-          </div>
-        </div>
-      )}
-
-      {showPopupSuccessfully && (
-
-        <div id="popup4" className="overlay">
-          <div className="popup4 h1 text-center">
-            <i className="fa-solid fa-circle-check" style={{ color: 'green' }}></i>
-            <div className="h4 py-4"><b>Sign Up Successfully</b></div>
-          </div>
-        </div>
-      )}
-
 
 
     </div>

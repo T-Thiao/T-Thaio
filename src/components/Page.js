@@ -260,15 +260,14 @@ function Page() {
               </div>
 
               <div class="row justify-content-center pb-4 px-4" style={{ backgroundColor: 'white', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px' }}>
-                <div class="col-3 ButtonApplyRow">
-                  <button onClick={handleSubmitPopup} class="filterButton h4 py-2" style={{
+                <div class="col-3 ButtonApplyRow" onClick={handleSubmitPopup}>
+                  <button class="filterButton h4 py-2" style={{
                     textAlign: 'center'
                   }}>Apply</button>
                 </div>
               </div>
             </div>
           </div>
-
 
         </div>
       )
