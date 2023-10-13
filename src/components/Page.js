@@ -11,19 +11,27 @@ function Page() {
 
   const [showPopup, setShowPopup] = useState(false);
 
-  const closePopup = () => {
+  const handleSubmitPopup = () => {
+    togglePopup();
+    // send data
+
+  };
+
+  const togglePopup = () => {
     setShowPopup(!showPopup);
   };
 
-  const displayPopup = () => {
-    setShowPopup(!showPopup);
+  const handleclosePopup = () => {
+    togglePopup();
+    setActiveButtons([]);
+    setActiveButtonsRegion([]);
   };
+
 
   const [activeButtons, setActiveButtons] = useState([]);
   const [activeButtonsRegion, setActiveButtonsRegion] = useState([]);
 
 
-  const buttonsPerRow = 3;
   const buttonMargin = '10px';
 
   const buttons = [
@@ -144,9 +152,7 @@ function Page() {
           <i class='bx bx-search' style={{ color: '#ffffff' }}  ></i>
         </div>
         <div class="rectangle-two">
-          <i onClick={displayPopup} class='bx bx-slider' style={{ color: '#ffffff', cursor: 'pointer' }} ></i>
-
-
+          <i onClick={togglePopup} class='bx bx-slider' style={{ color: '#ffffff', cursor: 'pointer' }} ></i>
 
         </div>
 
@@ -196,7 +202,7 @@ function Page() {
                   <h2 style={{ textAlign: 'left', textTransform: 'uppercase' }}> Filter your destination</h2>
                 </div>
                 <div class="col-1">
-                  <h2 class="closePopUp" style={{ textAlign: 'right', cursor: 'pointer' }} onClick={closePopup}>X</h2>
+                  <h2 class="closePopUp" style={{ textAlign: 'right', cursor: 'pointer' }} onClick={handleclosePopup}>X</h2>
                 </div>
               </div>
               <div class="row px-4 py-4" style={{ backgroundColor: '#ffffff' }}>
@@ -254,10 +260,10 @@ function Page() {
               </div>
 
               <div class="row justify-content-center pb-4 px-4" style={{ backgroundColor: 'white', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px' }}>
-                <div onClick={displayPopup} class="col-3 ButtonApplyRow">
-                  <button class="filterButton h4 py-2" style={{
+                <div class="col-3 ButtonApplyRow">
+                  <button onClick={handleSubmitPopup} class="filterButton h4 py-2" style={{
                     textAlign: 'center'
-                  }}>Apply Filter</button>
+                  }}>Apply</button>
                 </div>
               </div>
             </div>
