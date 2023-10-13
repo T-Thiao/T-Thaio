@@ -11,48 +11,62 @@ function Page() {
 
   const [showPopup, setShowPopup] = useState(false);
 
-  const togglePopup = () => {
+  const closePopup = () => {
     setShowPopup(!showPopup);
   };
 
-  // JavaScript to handle button selection and data storage
-  const buttons = document.querySelectorAll('.filterButton');
-  const selectedCategories = [];
+  const displayPopup = () => {
+    setShowPopup(!showPopup);
+  };
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Toggle the 'selected' class to change the visual style
-      button.classList.toggle('selected');
+  const [activeButtons, setActiveButtons] = useState([]);
+  const [activeButtonsRegion, setActiveButtonsRegion] = useState([]);
 
-      // Retrieve the category data from the button's 'data-category' attribute
-      const category = button.getAttribute('data-category');
 
-      if (button.classList.contains('selected')) {
-        if (!selectedCategories.includes(category)) {
-          selectedCategories.push(category);
+  const buttonsPerRow = 3;
+  const buttonMargin = '10px';
 
-        }
-        else {
-          // If the button is deselected, remove the category from the array if it's present
-          const index = selectedCategories.indexOf(category);
-          if (index !== -1) {
-            selectedCategories.splice(index, 1);
-          }
-        }
-      } else {
-        const index = selectedCategories.indexOf(category);
-        if (index !== -1) {
-          selectedCategories.splice(index, 1);
-        }
-      }
+  const buttons = [
+    { label: 'ศิลปะ', category: 'art' },
+    { label: 'วัฒนธรรม', category: 'culture' },
+    { label: 'ศาสนา', category: 'religion' },
+    { label: 'ธรรมชาติ', category: 'nature' },
+    { label: 'อาหาร', category: 'art' },
+    { label: 'สุขภาพ', category: 'health' },
+    { label: 'บริการ', category: 'service' },
+    { label: 'บันเทิง', category: 'entertain' }
+  ];
+
+  const buttonsRegion = [
+    { label: 'กรุงเทพ', category: 'bkk' },
+    { label: 'ปทุมธานี', category: 'Pathum' },
+    { label: 'นครปฐม', category: 'NakhonPathom' },
+    { label: 'นนทบุรี', category: 'Nonthaburi' },
+  ];
 
 
 
+  const handleButtonClick = (index) => {
+    // Check if the button is already in the activeButtons array
+    if (activeButtons.includes(index)) {
+      // Button is already active, remove it
+      setActiveButtons(activeButtons.filter((item) => item !== index));
+    } else {
+      // Button is not active, add it
+      setActiveButtons([...activeButtons, index]);
+    }
+  };
 
-    });
-  });
-
-
+  const handleButtonRegionClick = (index) => {
+    // Check if the button is already in the activeButtons array
+    if (activeButtonsRegion.includes(index)) {
+      // Button is already active, remove it
+      setActiveButtonsRegion(activeButtonsRegion.filter((item) => item !== index));
+    } else {
+      // Button is not active, add it
+      setActiveButtonsRegion([...activeButtonsRegion, index]);
+    }
+  };
 
 
   return (
@@ -130,7 +144,7 @@ function Page() {
           <i class='bx bx-search' style={{ color: '#ffffff' }}  ></i>
         </div>
         <div class="rectangle-two">
-          <i onClick={togglePopup} class='bx bx-slider' style={{ color: '#ffffff', cursor: 'pointer' }} ></i>
+          <i onClick={displayPopup} class='bx bx-slider' style={{ color: '#ffffff', cursor: 'pointer' }} ></i>
 
 
 
@@ -182,66 +196,68 @@ function Page() {
                   <h2 style={{ textAlign: 'left', textTransform: 'uppercase' }}> Filter your destination</h2>
                 </div>
                 <div class="col-1">
-                  <h2 class="closePopUp" style={{ textAlign: 'right', cursor: 'pointer' }} onClick={togglePopup}>X</h2>
+                  <h2 class="closePopUp" style={{ textAlign: 'right', cursor: 'pointer' }} onClick={closePopup}>X</h2>
                 </div>
               </div>
               <div class="row px-4 py-4" style={{ backgroundColor: '#ffffff' }}>
                 <div class="h3 pt-2 " style={{ textAlign: 'left', color: '#FE547B' }}><b>ความเกี่ยวข้อง</b></div>
                 <div class="row justify-content-center py-4">
-                  <div class="col-2 ButtonRow mx-5">
-                    <button class="filterButton h4 py-2" data-category="art" name="art">ศิลปะ</button>
-                  </div>
-                  <div class="col-2 ButtonRow mx-5" >
-                    <button class="filterButton h4 py-2" data-category="culture" name="culture">วัฒนธรรม</button>
-                  </div>
-                  <div class="col-2 ButtonRow mx-5" >
-                    <button class="filterButton h4 py-2 " data-category="religion" name="religion">ศาสนา</button>
-                  </div>
-                  <div class="col-2 ButtonRow mx-5" >
-                    <button class="filterButton h4 py-2" data-category="nature" name="nature">ธรรมชาติ</button>
-                  </div>
-                </div>
 
-                <div class="row justify-content-center py-2">
-                  <div class="col-2 ButtonRow mx-5">
-                    <button class="filterButton h4 py-2" data-category="food" name="food">อาหาร</button>
-                  </div>
-                  <div class="col-2 ButtonRow mx-5" >
-                    <button class="filterButton h4 py-2" data-category="health" name="health">สุขภาพ</button>
-                  </div>
-                  <div class="col-2 ButtonRow mx-5" >
-                    <button class="filterButton h4 py-2" data-category="service" name="service">บริการ</button>
-                  </div>
-                  <div class="col-2 ButtonRow mx-5" >
-                    <button class="filterButton h4 py-2" data-category="Entertain" name="Entertain">บันเทิง</button>
-                  </div>
+                  {buttons.map((button, index) => (
+                    <div
+                      key={index}
+                      className={`col-2 ButtonRow mx-5 ${activeButtons.includes(index) ? 'active' : ''
+                        }`}
+                      style={{ margin: buttonMargin }}
+                    >
+                      <div
+                        data-category={button.category}
+                        name={button.label}
+                        onClick={() => handleButtonClick(index)}
+                      >
+                        <button class="filterButton h4 py-2">{button.label}</button>
+                      </div>
+                    </div>
+                  ))}
+                  <div style={{ clear: 'both' }}></div>
+
                 </div>
 
               </div>
 
-              <div class="row px-4 py-4" style={{ backgroundColor: '#ffffff' }}>
+              <div class="row px-4 py-2" style={{ backgroundColor: '#ffffff' }}>
                 <div class="h3" style={{ textAlign: 'left', color: '#FE547B' }}><b>ภูมิภาค</b></div>
                 <div class="row justify-content-center py-4">
-                  <div class="col-2 ButtonRow mx-5">
-                    <button class="filterButton h4 py-2">กรุงเทพ</button>
-                  </div>
-                  <div class="col-2 ButtonRow mx-5" >
-                    <button class="filterButton h4 py-2">ปทุมธานี</button>
-                  </div>
-                  <div class="col-2 ButtonRow mx-5" >
-                    <button class="filterButton h4 py-2">นครปฐม</button>
-                  </div>
-                  <div class="col-2 ButtonRow mx-5" >
-                    <button class="filterButton h4 py-2">นนทบุรี</button>
-                  </div>
+
+                  {buttonsRegion.map((button, index) => (
+                    <div
+                      key={index}
+                      className={`col-2 ButtonRow mx-5 ${activeButtonsRegion.includes(index) ? 'active' : ''
+                        }`}
+                      style={{ margin: buttonMargin }}
+                    >
+                      <div
+                        data-category={button.category}
+                        name={button.label}
+                        onClick={() => handleButtonRegionClick(index)}
+                      >
+                        <button class="filterButton h4 py-2">{button.label}</button>
+                      </div>
+                    </div>
+                  ))}
+                  <div style={{ clear: 'both' }}></div>
+
+
                 </div>
 
 
               </div>
 
-              <div class="row justify-content-center py-4 px-4" style={{ backgroundColor: 'white' }}>
-                <div onClick={togglePopup} class="col-3 ButtonRow" >
-                  <button class="filterButton" style={{ textAlign: 'center', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px' }}>OK</button>
+              <div class="row justify-content-center pb-4 px-4" style={{ backgroundColor: 'white', borderBottomLeftRadius: '20px', borderBottomRightRadius: '20px' }}>
+                <div onClick={displayPopup} class="col-3 ButtonApplyRow">
+                  <button class="filterButton h4 py-2" style={{
+                    textAlign: 'center'
+                  }}>Apply Filter</button>
                 </div>
               </div>
             </div>
